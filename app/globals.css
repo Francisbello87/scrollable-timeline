@@ -57,10 +57,9 @@ body {
 }
 
 section {
-  --h: calc(var(--i) * 30);
+  /* --h: calc(var(--i) * 30); */
 
   min-height: 100vh;
-  background-color: hsl(var(--h, 0) 75% 50%);
 }
 
 .nav-link {
@@ -77,12 +76,6 @@ section {
 }
 
 .heading {
-  /* margin: 0 0 1rem;
-  grid-row: 1;
-  grid-column: 1 / span 7;
-  align-self: end;
-  position: relative;
-  */
   z-index: 1;
 }
 
@@ -101,7 +94,7 @@ section {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: hsl(var(--h, 0) 50% 50%);
+
   mix-blend-mode: screen;
 }
 .section-img img {
