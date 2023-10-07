@@ -12,7 +12,7 @@ export default function useScrollContentAnimation() {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     );
-
+    gsap.set("body", { autoAlpha: 1 });
     const initSectionAnimation = () => {
       if (prefersReducedMotion.matches) return;
 
