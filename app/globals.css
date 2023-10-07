@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,8 +7,24 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-lobster: "Lobster Two", cursive;
+  --font-monte: "Montserrat", sans-serif;
+  --font-mafieso: "Mafieso";
 }
 
+@font-face {
+  font-family: "Mafieso";
+  src: url("../public/font/Mafieso-8M7KB.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -24,4 +41,70 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.nav-track {
+  min-width: max(200rem, 200%);
+  padding: 1.5rem max(100rem, 100%) 0 0;
+  /* background-color: red; */
+}
+
+.marker {
+  transform: translate3d(-50%, 0, 0);
+  background: blue;
+  border-radius: 100%;
+  z-index: 2000;
+}
+
+section {
+  --h: calc(var(--i) * 30);
+
+  min-height: 100vh;
+  background-color: hsl(var(--h, 0) 75% 50%);
+}
+
+.nav-link {
+  position: relative;
+  display: block;
+  min-width: 8rem;
+  text-align: center;
+}
+
+.container {
+  padding: 0 max(5vw, 1rem);
+  transform-style: perspective-3d;
+  perspective: 900px;
+}
+
+.heading {
+  /* margin: 0 0 1rem;
+  grid-row: 1;
+  grid-column: 1 / span 7;
+  align-self: end;
+  position: relative;
+  */
+  z-index: 1;
+}
+
+.section-img {
+  grid-row: 1;
+  grid-column: 5 / span 3;
+  position: relative;
+  box-shadow: 0.45rem 0.45rem 8rem rgb(0 0 0 / 0.3);
+  align-self: center;
+}
+
+.section-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: hsl(var(--h, 0) 50% 50%);
+  mix-blend-mode: screen;
+}
+.section-img img {
+  filter: brightness(0.5) grayscale(100%);
+  height: 300px;
 }
