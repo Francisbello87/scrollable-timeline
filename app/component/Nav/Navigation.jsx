@@ -8,9 +8,7 @@ import { useScrollAnimaton } from "@/app/hooks/useScrollAnimation";
 import { SECTIONS_DATA } from "@/app/data/sections/sections.data";
 
 export default function Navigation() {
-  useEffect(() => {
-    useScrollAnimaton();
-  }, []);
+  useScrollAnimaton();
 
   return (
     <nav className="fixed w-full top-0 left-0 z-50">
